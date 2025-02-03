@@ -54,15 +54,14 @@ def classify_number():
     # If the number parameter is missing
     if number is None:
         return jsonify({
-            "error": True,
-            # "message": "Missing 'number' parameter"
+            "error": True
         }), 400
 
     # Input validation: Ensure it's an integer
     if not number.lstrip('-').isdigit():
         return jsonify({
-            "error": True,
-            "message": "Invalid number format. Please provide an integer."
+            "number": number,
+            "error": True
         }), 400
 
     number = int(number)
