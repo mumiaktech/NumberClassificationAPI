@@ -59,7 +59,8 @@ def classify_number():
     
     # Determine properties
     properties = []
-    if is_armstrong(number):
+    is_armstrong_number = is_armstrong(number)
+    if is_armstrong_number:
         properties.append("armstrong")
     if number % 2 == 0:
         properties.append("even")
@@ -75,6 +76,13 @@ def classify_number():
         "digit_sum": digit_sum(number),
         "fun_fact": get_fun_fact(number)
     }
+    
+    # Override fun_fact if the number is an Armstrong number
+    if is_armstrong_number:
+        digits = [int(d) for d in str(number)]
+        length = len(digits)
+        armstrong_explanation = f"{number} is an Armstrong number because {' + '.join(f'{d}^{length}' for d in digits)} = {number}"
+        response["fun_fact"] = armstrong_explanation
     
     return jsonify(response), 200
 
