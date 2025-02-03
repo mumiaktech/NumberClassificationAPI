@@ -54,5 +54,5 @@ Deploy the API to a platform like [Render](https://render.com/), [Heroku](https:
 ## Testing
 Use tools like [Postman](https://www.postman.com/) or `curl` to test the API:
 ```bash
-curl "https://number-classification-api-p0fs.onrender.com/api/classify-number?number=200"
+curl "https://number-classification-api-p0fs.onrender.com/api/classify-number?number=371"
 ```
